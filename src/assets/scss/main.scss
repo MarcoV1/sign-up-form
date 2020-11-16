@@ -13,6 +13,10 @@ html {
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   height: 100vh;
   background: url("../img/bg-intro-mobile.png") $red repeat center;
   color: white;
@@ -24,19 +28,12 @@ body {
   }
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .content-wrapper {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
   max-width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto;
   @include tablet() {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -51,6 +48,7 @@ body {
 
   @include tablet() {
     text-align: initial;
+    margin-bottom: 4rem;
   }
 
   h1 {
@@ -68,6 +66,7 @@ body {
 }
 
 .right-section {
+  margin: 3rem auto;
   div:first-child > span {
     margin-bottom: 15px;
     font-size: large;
@@ -80,7 +79,7 @@ body {
   text-align: center;
   border-radius: 10px;
   background-color: $blue;
-  margin: 3rem auto;
+  margin: 2.5rem auto;
   color: #fff;
   cursor: pointer;
 
@@ -94,10 +93,9 @@ body {
 }
 
 .form-container {
-  padding: 5rem;
+  padding: 4rem;
   background: white;
   border-radius: 10px;
-  margin-bottom: 3rem;
 }
 
 .form__button {
@@ -134,7 +132,7 @@ form {
   input {
     width: 100%;
     padding-left: 4rem;
-    height: 7rem;
+    height: 6rem;
     border: 1px solid #dedede;
     border-radius: 5px;
 
@@ -159,7 +157,7 @@ form {
     opacity: 0;
     transition: all 0.3s;
     position: absolute;
-    top: 1.875rem;
+    top: 1.9rem;
     right: 3rem;
   }
 
@@ -167,7 +165,7 @@ form {
     content: url("../img/icon-checkmark.svg");
     position: absolute;
     right: 3rem;
-    top: 1.875rem;
+    top: 1.9rem;
     opacity: 0;
     transition: all 0.3s;
   }
