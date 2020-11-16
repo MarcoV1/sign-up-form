@@ -1,0 +1,62 @@
+<main class="content-wrapper">
+
+  <section class="left-section">
+    <h1>Learn to code by watching others.</h1>
+    <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+      but understanding how developers think is invaluable. </p>
+
+  </section>
+
+  <section class="right-section">
+    <div class="feature box-shadow"><span>Try it free 7 days</span> then $20/mo. thereafter.</div>
+
+    <div class="form-container box-shadow">
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="form" class="form">
+        <div class="form-control">
+
+          <input type="text" placeholder="First Name" formControlName="firstName" [ngClass]="{ 'invalid': submitted
+        && f.firstName.hasError('required') }">
+          <div *ngIf="f.firstName.hasError('required')" class="invalid-icon"></div>
+          <div *ngIf="!f.firstName.hasError('required')" class="valid-icon"></div>
+          <ng-container *ngIf="f.firstName?.errors">
+            <small class="invalid-feedback" *ngIf="submitted && f.firstName.hasError('required')">Required</small>
+          </ng-container>
+        </div>
+
+        <div class="form-control">
+          <input type="text" placeholder="Last Name" formControlName="lastName" [ngClass]="{ 'invalid': submitted
+          && f.lastName.hasError('required') }">
+          <div *ngIf="f.lastName.hasError('required')" class="invalid-icon"></div>
+          <div *ngIf="!f.lastName.hasError('required')" class="valid-icon"></div>
+          <ng-container *ngIf="f.lastName?.errors">
+            <small class="invalid-feedback" *ngIf="submitted && f.lastName.hasError('required')">Required</small>
+          </ng-container>
+        </div>
+        <div class="form-control">
+          <input type="email" placeholder="Email Address" formControlName="email" [ngClass]="{ 'invalid': submitted
+            && f.email.hasError('required') }">
+          <div *ngIf="f.email.hasError('required')" class="invalid-icon"></div>
+          <div *ngIf="!f.email.hasError('required')" class="valid-icon"></div>
+
+          <ng-container *ngIf="f.email?.errors">
+            <small class="invalid-feedback" *ngIf="submitted && f.email.hasError('required')">Required</small>
+          </ng-container>
+        </div>
+        <div class="form-control">
+          <input type="password" placeholder="Password" formControlName="password" [ngClass]="{ 'invalid': submitted &&
+            f.password.hasError('required') }">
+          <div *ngIf="f.password.hasError('required')" class="invalid-icon"></div>
+          <div *ngIf="!f.password.hasError('required')" class="valid-icon"></div>
+          <ng-container *ngIf="f.password?.errors">
+            <small class="invalid-feedback" *ngIf="submitted && f.password.hasError('required')">Required</small>
+          </ng-container>
+        </div>
+        <button class="form__button">Claim your free trial</button>
+        <p class="form__footer">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+      </form>
+    </div>
+  </section>
+
+
+</main>
